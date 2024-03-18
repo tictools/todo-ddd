@@ -30,6 +30,6 @@
     "vite": "^5.1.6"
   },
   "lint-staged": {
-    "*.{tx, tsx}": "bun run lint"
+    "*.{tx, tsx}": "npx prettier"
   }
 }
