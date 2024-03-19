@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <header className={styles["main-header"]}>
-        <span className="version">{version}</span>
+        <span className={styles["main-header__version"]}>{version}</span>
         <h1>
           TO
           <span>DDD</span>O
