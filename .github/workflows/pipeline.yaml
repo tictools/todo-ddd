@@ -59,7 +59,7 @@ jobs:
           fetch-depth: 0
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
-      - name: Upload artifact
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
