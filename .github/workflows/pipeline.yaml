@@ -19,10 +19,12 @@ jobs:
   lint:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: oven-sh/setup-bun@v1
+      - name: Bun setup
+        uses: oven-sh/setup-bun@v1
         with:
           bun-version: 1.x
       - name: Install dependencies
@@ -32,11 +34,14 @@ jobs:
 
   build:
     runs-on: ubuntu-22.04
+    needs: [lint]
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: oven-sh/setup-bun@v1
+      - name: Bun setup
+        uses: oven-sh/setup-bun@v1
         with:
           bun-version: 1.x
       - name: Install dependencies
@@ -58,8 +63,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-      - name: Upload artifact
+        run: npm install netlify-cli -g
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
