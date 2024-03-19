@@ -32,6 +32,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": "bun run lint",
-    "*.{ts,css,md}": "npx prettier --write"
+    "*.{ts, tsx,css,md}": "npx prettier --write"
   }
 }
